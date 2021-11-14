@@ -24,8 +24,6 @@ int main()
 	Processor* multi = new ProcessorMutilply();
 	Processor* divide = new ProcessorDivide();
 
-	std::cout << add->getChar() << std::endl;
-	std::cout << "==========" << std::endl;
 
 
 	registerProcessor(*add);
@@ -34,11 +32,13 @@ int main()
 	registerProcessor(*divide);
 	std::list<std::string>* result = convertToReversePolish(input);
 
-	std::cout<<result->size() << std::endl;
+	std::cout<<"后缀表达式:" << std::endl;
 	for (std::list<std::string>::iterator it = result->begin(); it != result->end(); ++it) {
 		std::cout << *it;
 		std::cout << " ";
 	}
+	std::cout << std::endl;
+	std::cout << "==========" << std::endl;
 
 
 	delete add;

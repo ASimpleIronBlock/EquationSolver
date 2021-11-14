@@ -35,7 +35,7 @@ std::list<std::string>* convertToReversePolish(std::string& nifix)
 
 			ret->push_back("x");
 		}else {
-			std::cout << currentNumber <<std:: endl;
+			//std::cout << currentNumber <<std:: endl;
 			ret->push_back(std::to_string(currentNumber));
 			currentNumber = 0;
 			if (getProcessor(*chars)!=nullptr)
@@ -73,7 +73,7 @@ std::list<std::string>* convertToReversePolish(std::string& nifix)
 		ret->push_back(b);
 		//std::cout << "·ûºÅ:" << b <<";" << std::endl;
 	}
-
+	delete stack;
 
 	return ret;
 }
