@@ -2,7 +2,7 @@
 #include "Processor.h"
 #include <iostream>
 #include <stack>
-
+#include <sstream>
 static std::map<char, Processor*> processorNameMap;
 
 
@@ -19,28 +19,69 @@ std::list<std::string>* convertToReversePolish(std::string& nifix)
 	int currentNumber = 0;
 	while (*chars != '\0') {
 		std::cout << "当前字符:" <<  * chars << std::endl;
-		if (*chars>='0'&&*chars<='9')
+		if (( * chars >= '0' && *chars <= '9') )
 		{
 			currentNumber *= 10;
 			currentNumber += *chars - '0';
 			std::cout << "这是数字" << std::endl;
+		}
+		else if ((*chars == 'x'))
+		{
+			std::cout << "这是未知数" << std::endl;
+			if (currentNumber!=0)
+			{
+				ret->push_back(std::to_string(currentNumber));
+			}
+
+			ret->push_back("x");
 		}else {
 			std::cout << currentNumber <<std:: endl;
-
+			ret->push_back(std::to_string(currentNumber));
 			currentNumber = 0;
+			if (getProcessor(*chars)!=nullptr)
+			{
+				while (stack->top().getPriority() > getProcessor(*chars)->getPriority()&&!stack->empty()) {
+					char top = stack->top().getChar();
+					stack->pop();
+					std::string a(1,top);
+					ret->push_back(a);
+				}
+
+				stack->push(*getProcessor(*chars));
+
+			}
+			else {
+				std::cout << "未能识别字符:" << *chars << std::endl;
+			}
 
 
 
 		}
-
-
-
 		chars++;
 	}
+	if (currentNumber!=0)
+	{
+		ret->push_back(std::to_string(currentNumber));
+	}
 
-	return nullptr;
+	while (!stack->empty())
+	{
+		char a = stack->top().getChar();
+		stack->pop();
+		std::string b(a, 1);
+		ret->push_back(b);
+	}
+
+
+	return ret;
 }
 void registerProcessor(Processor& processor)
 {
 	processorNameMap.insert(std::pair<char,Processor*>::pair(processor.getChar(),&processor));
+}
+
+
+Processor* getProcessor(char& name) {
+	Processor* pro = processorNameMap[name];
+	return pro;
 }

@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Equation.h" />
+    <ClInclude Include="NotLinearEquationSolver.h" />
     <ClInclude Include="PrefixProcessor.h" />
     <ClInclude Include="Processor.h" />
     <ClInclude Include="ProcessorAdd.h" />

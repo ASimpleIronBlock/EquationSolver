@@ -8,4 +8,4 @@
 std::list<std::string>* convertToReversePolish(std::string& nifix);
 
 void registerProcessor(Processor& processor);
-
+Processor* getProcessor(char& name);

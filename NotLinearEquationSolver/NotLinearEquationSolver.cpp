@@ -5,6 +5,10 @@
 #include <string>
 #include "PrefixProcessor.h"
 #include "ProcessorAdd.h"
+#include "NotLinearEquationSolver.h"
+#include "ProcessorSubtract.h"
+#include "ProcessorMutilply.h"
+#include "ProcessorDivide.h"
 int main()
 {
 	std::cout << "请输入要解的方程"<<std::endl;
@@ -13,7 +17,16 @@ int main()
 	std::cin >> input;
 	std::cout << "输入的方程为:" << input;
 	Processor* add = new ProcessorAdd();
-	convertToReversePolish(input);
+	Processor* sub = new ProcessorSubtract();
+	Processor* multi = new ProcessorMutilply();
+	Processor* divide = new ProcessorDivide();
+	registerProcessor(*add);
+	std::list<std::string>* result = convertToReversePolish(input);
+
+	std::cout << std::endl;
+	for (std::list<std::string>::iterator it = result->begin(); it != result->end(); ++it) {
+		std::cout << *it;
+	}
 
 
 	delete add;
