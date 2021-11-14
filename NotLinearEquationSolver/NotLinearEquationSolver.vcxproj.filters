@@ -13,10 +13,65 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\Processor">
+      <UniqueIdentifier>{e3a8bed2-799a-4e30-8854-d6bcfce4b5f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Processor">
+      <UniqueIdentifier>{af22d0d1-fdc0-4a2e-a204-c0f3269694a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NotLinearEquationSolver.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Equation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Processor.cpp">
+      <Filter>源文件\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessorAdd.cpp">
+      <Filter>源文件\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessorSubtract.cpp">
+      <Filter>源文件\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessorMutilply.cpp">
+      <Filter>源文件\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessorDivide.cpp">
+      <Filter>源文件\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="PrefixProcessor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="NotLinearEquationSolver.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Equation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Processor.h">
+      <Filter>头文件\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessorAdd.h">
+      <Filter>头文件\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessorSubtract.h">
+      <Filter>头文件\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessorMutilply.h">
+      <Filter>头文件\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessorDivide.h">
+      <Filter>头文件\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="PrefixProcessor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

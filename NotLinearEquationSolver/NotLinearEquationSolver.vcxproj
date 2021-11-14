@@ -139,7 +139,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Equation.cpp" />
     <ClCompile Include="NotLinearEquationSolver.cpp" />
+    <ClCompile Include="PrefixProcessor.cpp" />
+    <ClCompile Include="Processor.cpp" />
+    <ClCompile Include="ProcessorAdd.cpp" />
+    <ClCompile Include="ProcessorDivide.cpp" />
+    <ClCompile Include="ProcessorMutilply.cpp" />
+    <ClCompile Include="ProcessorSubtract.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="NotLinearEquationSolver.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Equation.h" />
+    <ClInclude Include="PrefixProcessor.h" />
+    <ClInclude Include="Processor.h" />
+    <ClInclude Include="ProcessorAdd.h" />
+    <ClInclude Include="ProcessorDivide.h" />
+    <ClInclude Include="ProcessorMutilply.h" />
+    <ClInclude Include="ProcessorSubtract.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
