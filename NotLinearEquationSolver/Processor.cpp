@@ -12,5 +12,5 @@ double Processor::apply(double number1, double number2)
 
 char Processor::getChar()
 {
-    return 0;
+    return '?';
 }

@@ -4,11 +4,11 @@ class ProcessorSubtract :
     public Processor
 {
 
-    int getPriority();
+    virtual int getPriority();
 
-    double apply(double number1, double number2);
+    virtual double apply(double number1, double number2);
 
-    char getChar();
+    virtual char getChar();
 
 };
 

@@ -14,16 +14,16 @@ std::list<std::string>* convertToReversePolish(std::string& nifix)
 
 
 	std::list<std::string>* ret = new std::list<std::string>();
-	std::stack<Processor>* stack = new std::stack<Processor>();
+	std::stack<Processor*>* stack = new std::stack<Processor*>();
 
 	int currentNumber = 0;
 	while (*chars != '\0') {
-		std::cout << "当前字符:" <<  * chars << std::endl;
+		//std::cout << "当前字符:" <<  * chars << std::endl;
 		if (( * chars >= '0' && *chars <= '9') )
 		{
 			currentNumber *= 10;
 			currentNumber += *chars - '0';
-			std::cout << "这是数字" << std::endl;
+			//std::cout << "这是数字" << std::endl;
 		}
 		else if ((*chars == 'x'))
 		{
@@ -40,14 +40,15 @@ std::list<std::string>* convertToReversePolish(std::string& nifix)
 			currentNumber = 0;
 			if (getProcessor(*chars)!=nullptr)
 			{
-				while (stack->top().getPriority() > getProcessor(*chars)->getPriority()&&!stack->empty()) {
-					char top = stack->top().getChar();
+				while ( !stack->empty()&&stack->top()->getPriority() > getProcessor(*chars)->getPriority()) {
+					char top = stack->top()->getChar();
 					stack->pop();
-					std::string a(1,top);
+					std::string a(&top,1);
+					//std::cout << "符号:" << a << std::endl;
 					ret->push_back(a);
 				}
 
-				stack->push(*getProcessor(*chars));
+				stack->push(getProcessor(*chars));
 
 			}
 			else {
@@ -66,10 +67,11 @@ std::list<std::string>* convertToReversePolish(std::string& nifix)
 
 	while (!stack->empty())
 	{
-		char a = stack->top().getChar();
+		char a = stack->top()->getChar();
 		stack->pop();
-		std::string b(a, 1);
+		std::string b(&a,1);
 		ret->push_back(b);
+		//std::cout << "符号:" << b <<";" << std::endl;
 	}
 
 
@@ -83,5 +85,6 @@ void registerProcessor(Processor& processor)
 
 Processor* getProcessor(char& name) {
 	Processor* pro = processorNameMap[name];
+	//std::cout << "getProcessor(),name:"<<name<<",符号:"<<pro->getChar() << std::endl;
 	return pro;
 }

@@ -11,21 +11,33 @@
 #include "ProcessorDivide.h"
 int main()
 {
+
+
+
 	std::cout << "请输入要解的方程"<<std::endl;
 	std::cout << "^为次方符号"<<std::endl;
 	std::string input;
 	std::cin >> input;
-	std::cout << "输入的方程为:" << input;
+	std::cout << "输入的方程为:" << input<<std::endl;
 	Processor* add = new ProcessorAdd();
 	Processor* sub = new ProcessorSubtract();
 	Processor* multi = new ProcessorMutilply();
 	Processor* divide = new ProcessorDivide();
+
+	std::cout << add->getChar() << std::endl;
+	std::cout << "==========" << std::endl;
+
+
 	registerProcessor(*add);
+	registerProcessor(*sub);
+	registerProcessor(*multi);
+	registerProcessor(*divide);
 	std::list<std::string>* result = convertToReversePolish(input);
 
-	std::cout << std::endl;
+	std::cout<<result->size() << std::endl;
 	for (std::list<std::string>::iterator it = result->begin(); it != result->end(); ++it) {
 		std::cout << *it;
+		std::cout << " ";
 	}
 
 
