@@ -139,27 +139,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Equation.cpp" />
     <ClCompile Include="NotLinearEquationSolver.cpp" />
-    <ClCompile Include="PrefixProcessor.cpp" />
+    <ClCompile Include="EquationPhaser.cpp" />
     <ClCompile Include="Processor.cpp" />
     <ClCompile Include="ProcessorAdd.cpp" />
+    <ClCompile Include="ProcessorCos.cpp" />
     <ClCompile Include="ProcessorDivide.cpp" />
     <ClCompile Include="ProcessorMutilply.cpp" />
+    <ClCompile Include="ProcessorPow.cpp" />
+    <ClCompile Include="ProcessorSin.cpp" />
     <ClCompile Include="ProcessorSubtract.cpp" />
+    <ClCompile Include="ProcessorTan.cpp" />
+    <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="NotLinearEquationSolver.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Equation.h" />
     <ClInclude Include="NotLinearEquationSolver.h" />
-    <ClInclude Include="PrefixProcessor.h" />
+    <ClInclude Include="EquationPhaser.h" />
     <ClInclude Include="Processor.h" />
     <ClInclude Include="ProcessorAdd.h" />
+    <ClInclude Include="ProcessorCos.h" />
     <ClInclude Include="ProcessorDivide.h" />
     <ClInclude Include="ProcessorMutilply.h" />
+    <ClInclude Include="ProcessorPow.h" />
+    <ClInclude Include="ProcessorSin.h" />
     <ClInclude Include="ProcessorSubtract.h" />
+    <ClInclude Include="ProcessorTan.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

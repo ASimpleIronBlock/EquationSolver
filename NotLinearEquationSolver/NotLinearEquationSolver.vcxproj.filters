@@ -24,9 +24,6 @@
     <ClCompile Include="NotLinearEquationSolver.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Equation.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Processor.cpp">
       <Filter>源文件\Processor</Filter>
     </ClCompile>
@@ -42,8 +39,23 @@
     <ClCompile Include="ProcessorDivide.cpp">
       <Filter>源文件\Processor</Filter>
     </ClCompile>
-    <ClCompile Include="PrefixProcessor.cpp">
+    <ClCompile Include="EquationPhaser.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessorPow.cpp">
+      <Filter>源文件\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessorSin.cpp">
+      <Filter>源文件\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessorCos.cpp">
+      <Filter>源文件\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessorTan.cpp">
+      <Filter>源文件\Processor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -52,9 +64,6 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Equation.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Processor.h">
       <Filter>头文件\Processor</Filter>
     </ClInclude>
@@ -70,11 +79,26 @@
     <ClInclude Include="ProcessorDivide.h">
       <Filter>头文件\Processor</Filter>
     </ClInclude>
-    <ClInclude Include="PrefixProcessor.h">
+    <ClInclude Include="EquationPhaser.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="NotLinearEquationSolver.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessorPow.h">
+      <Filter>头文件\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessorSin.h">
+      <Filter>头文件\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessorCos.h">
+      <Filter>头文件\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessorTan.h">
+      <Filter>头文件\Processor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

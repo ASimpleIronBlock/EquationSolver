@@ -3,45 +3,53 @@
 
 #include <iostream>
 #include <string>
-#include "PrefixProcessor.h"
-#include "ProcessorAdd.h"
 #include "NotLinearEquationSolver.h"
-#include "ProcessorSubtract.h"
-#include "ProcessorMutilply.h"
-#include "ProcessorDivide.h"
+#include <list>
+#include "EquationPhaser.h"
 int main()
 {
 
 
-
+	init();
 	std::cout << "请输入要解的方程"<<std::endl;
-	std::cout << "^为次方符号"<<std::endl;
+	std::cout << "^为次方符号,1s为sin,1c为cos,1t为tan"<<std::endl;
+	std::cout << "不要输入小数和负数"<<std::endl;
 	std::string input;
 	std::cin >> input;
 	std::cout << "输入的方程为:" << input<<std::endl;
-	Processor* add = new ProcessorAdd();
-	Processor* sub = new ProcessorSubtract();
-	Processor* multi = new ProcessorMutilply();
-	Processor* divide = new ProcessorDivide();
 
-
-
-	registerProcessor(*add);
-	registerProcessor(*sub);
-	registerProcessor(*multi);
-	registerProcessor(*divide);
-	std::list<std::string>* result = convertToReversePolish(input);
-
-	std::cout<<"后缀表达式:" << std::endl;
-	for (std::list<std::string>::iterator it = result->begin(); it != result->end(); ++it) {
-		std::cout << *it;
-		std::cout << " ";
+	std::list<std::string>* equation = phaseEquation(input);
+	if (isConstant(equation))
+	{
+		std::cout << "方程中的x约掉了，这个方程与x无关" << std::endl;
 	}
-	std::cout << std::endl;
-	std::cout << "==========" << std::endl;
+	else {
+		while (true)
+		{
+			std::cout << "请输入方程的一个近似解" << std::endl;
+			std::string x0;
+			std::cin >> x0;
 
+			double result = solveEquation(equation, std::atof(x0.c_str()));
 
-	delete add;
+			if (result == INFINITY)
+			{
+				std::cout << "方程的一个解离输入的x0有点问题或不在定义域内，请重新输入" << std::endl;
+			}
+			else {
+				std::cout << "方程的一个近似解是" << result << std::endl;
+				break;
+			}
+		}
+	}
+
+	
+
+	destroy();
+	system("pause");
+
+	
+	
 	
 }
 
