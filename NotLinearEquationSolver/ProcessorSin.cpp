@@ -14,3 +14,8 @@ char ProcessorSin::getChar()
 {
     return 's';
 }
+
+std::pair<std::string, std::string>* ProcessorSin::getAliase()
+{
+    return new std::pair<std::string, std::string>("sin", "1s");;
+}

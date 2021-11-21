@@ -39,7 +39,7 @@
     <ClCompile Include="ProcessorDivide.cpp">
       <Filter>源文件\Processor</Filter>
     </ClCompile>
-    <ClCompile Include="EquationPhaser.cpp">
+    <ClCompile Include="EquationHandler.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ProcessorPow.cpp">
@@ -59,11 +59,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="NotLinearEquationSolver.rc">
-      <Filter>资源文件</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Processor.h">
       <Filter>头文件\Processor</Filter>
     </ClInclude>
@@ -79,7 +74,7 @@
     <ClInclude Include="ProcessorDivide.h">
       <Filter>头文件\Processor</Filter>
     </ClInclude>
-    <ClInclude Include="EquationPhaser.h">
+    <ClInclude Include="EquationHandler.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="NotLinearEquationSolver.h">
@@ -100,5 +95,21 @@
     <ClInclude Include="ProcessorTan.h">
       <Filter>头文件\Processor</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="NotLinearEquationSolver.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="D:\Desktop\QQ截图20211121035751.ico">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>

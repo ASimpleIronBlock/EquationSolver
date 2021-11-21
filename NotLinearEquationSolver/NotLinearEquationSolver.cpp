@@ -5,14 +5,14 @@
 #include <string>
 #include "NotLinearEquationSolver.h"
 #include <list>
-#include "EquationPhaser.h"
+#include "EquationHandler.h"
 int main()
 {
 
 
 	init();
 	std::cout << "请输入要解的方程"<<std::endl;
-	std::cout << "^为次方符号,1s为sin,1c为cos,1t为tan"<<std::endl;
+	//std::cout << "^为次方符号,1s为sin,1c为cos,1t为tan"<<std::endl;
 	std::cout << "不要输入小数和负数"<<std::endl;
 	std::string input;
 	std::cin >> input;

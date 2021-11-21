@@ -13,3 +13,8 @@ char ProcessorCos::getChar()
 {
     return 'c';
 }
+
+std::pair<std::string, std::string>* ProcessorCos::getAliase()
+{
+    return new std::pair<std::string,std::string>("cos","1c");
+}

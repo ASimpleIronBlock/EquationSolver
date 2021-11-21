@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -140,7 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="NotLinearEquationSolver.cpp" />
-    <ClCompile Include="EquationPhaser.cpp" />
+    <ClCompile Include="EquationHandler.cpp" />
     <ClCompile Include="Processor.cpp" />
     <ClCompile Include="ProcessorAdd.cpp" />
     <ClCompile Include="ProcessorCos.cpp" />
@@ -153,11 +153,8 @@
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="NotLinearEquationSolver.rc" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="NotLinearEquationSolver.h" />
-    <ClInclude Include="EquationPhaser.h" />
+    <ClInclude Include="EquationHandler.h" />
     <ClInclude Include="Processor.h" />
     <ClInclude Include="ProcessorAdd.h" />
     <ClInclude Include="ProcessorCos.h" />
@@ -167,7 +164,15 @@
     <ClInclude Include="ProcessorSin.h" />
     <ClInclude Include="ProcessorSubtract.h" />
     <ClInclude Include="ProcessorTan.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
     <ClInclude Include="Utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="NotLinearEquationSolver.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="D:\Desktop\QQ截图20211121035751.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

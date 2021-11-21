@@ -18,7 +18,7 @@ std::vector<std::string> split(const std::string& str, const std::string& patter
     return resultVec;
 };
 
-/* ÓÃxÌæ»»a */
+
 std::string replaceWith(std::string& str,std::string find,std::string replace) {
     int pos;
     pos = str.find(find);

@@ -14,3 +14,8 @@ char Processor::getChar()
 {
     return '?';
 }
+
+std::pair<std::string, std::string>* Processor::getAliase()
+{
+    return nullptr;
+}

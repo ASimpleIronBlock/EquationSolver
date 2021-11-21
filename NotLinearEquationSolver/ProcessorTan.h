@@ -10,5 +10,7 @@ public:
     virtual double apply(double number1, double number2);
 
     virtual char getChar();
+
+    virtual std::pair<std::string, std::string>* getAliase();
 };
 

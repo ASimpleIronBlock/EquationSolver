@@ -1,10 +1,12 @@
-#include "EquationPhaser.h"
 #include "Processor.h"
 #include <iostream>
 #include <stack>
 #include <sstream>
-#include "EquationPhaser.h"
+#include "EquationHandler.h"
 static std::map<char, Processor*> processorNameMap;
+static std::map<std::string, std::string> defineMap;
+
+
 const double eposilon = 10e-5;
 
 std::list<std::string>* convertToReversePolish(std::string& nifix)
@@ -242,6 +244,11 @@ double calcReversePolish(std::list<std::string>* in, double x)
 void registerProcessor(Processor& processor)
 {
 	processorNameMap.insert(std::pair<char,Processor*>::pair(processor.getChar(),&processor));
+	if (processor.getAliase() != nullptr)
+	{
+		defineMap.insert(*processor.getAliase());
+	}
+
 }
 
 
@@ -403,6 +410,17 @@ bool isConstant(std::list<std::string>* equation){
 	double y2 = calcReversePolish(equation, rand());
 	double delta = std::abs(y1 - y2);
 	return delta < eposilon;
+}
+
+
+std::string& replaceDefine(std::string input) {
+	std::map<std::string, std::string>::iterator  it;
+	for (it = defineMap.begin(); it != defineMap.end(); ++it)
+	{
+		replaceWith(input, it->first,it->second);
+	}
+
+
 }
 
 

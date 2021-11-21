@@ -13,3 +13,8 @@ char ProcessorTan::getChar()
 {
     return 't';
 }
+
+std::pair<std::string, std::string>* ProcessorTan::getAliase()
+{
+    return new std::pair<std::string, std::string>("tan", "1t");;
+}
