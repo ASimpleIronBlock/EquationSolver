@@ -164,7 +164,6 @@
     <ClInclude Include="ProcessorSin.h" />
     <ClInclude Include="ProcessorSubtract.h" />
     <ClInclude Include="ProcessorTan.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="resource1.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
@@ -172,7 +171,7 @@
     <ResourceCompile Include="NotLinearEquationSolver.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="D:\Desktop\QQ截图20211121035751.ico" />
+    <Image Include="D:\Desktop\icon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

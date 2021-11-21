@@ -95,9 +95,6 @@
     <ClInclude Include="ProcessorTan.h">
       <Filter>头文件\Processor</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="resource1.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -108,7 +105,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="D:\Desktop\QQ截图20211121035751.ico">
+    <Image Include="D:\Desktop\icon.ico">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>

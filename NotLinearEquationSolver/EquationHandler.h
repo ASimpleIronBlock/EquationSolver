@@ -30,3 +30,4 @@ double solveEquation(std::list<std::string>* equation, double x0);
 double calcDerivativeAt(std::list<std::string>* equation,double x);
 
 bool isConstant(std::list<std::string>* equation);
+std::string replaceDefine(std::string input);

@@ -296,6 +296,9 @@ Processor* getProcessor(char& name) {
 std::list<std::string>* phaseEquation(std::string input) {
 	//把空格替换掉
 	std::string str = replaceWith(input, " ", "");
+	str = replaceDefine(str);
+
+	std::cout << str<<std::endl;
 
 	//分别解析等号的左面和右面
 	std::vector<std::string> two= split(str, "=");
@@ -306,23 +309,6 @@ std::list<std::string>* phaseEquation(std::string input) {
 	}
 	//中缀表达式转后缀表达式
 	std::list<std::string>* reversePolishLeft = convertToReversePolish(two[0]);
-	std::list<std::string>* reversePolishRight = convertToReversePolish(two[1]);
-
-	//计算后缀表达式的值
-	std::list<std::string>* valueLeft = calcReversePolish(reversePolishLeft);
-	std::list<std::string>* valueRight = calcReversePolish(reversePolishRight);
-
-
-	//移项
-	for (std::list<std::string>::iterator it = valueRight->begin(); it != valueRight->end(); ++it) {
-		valueLeft->push_back(*it);
-	}
-	valueLeft->push_back("-");
-	std::list<std::string>* afterAll = calcReversePolish(valueLeft);
-
-
-
-
 	//打印
 	std::cout << "等号左面的后缀表达式:" << std::endl;
 	for (std::list<std::string>::iterator it = reversePolishLeft->begin(); it != reversePolishLeft->end(); ++it) {
@@ -331,12 +317,18 @@ std::list<std::string>* phaseEquation(std::string input) {
 	}
 	std::cout << std::endl;
 
+	std::list<std::string>* reversePolishRight = convertToReversePolish(two[1]);
+
 	std::cout << "等号右面的后缀表达式:" << std::endl;
 	for (std::list<std::string>::iterator it = reversePolishRight->begin(); it != reversePolishRight->end(); ++it) {
 		std::cout << *it;
 		std::cout << " ";
 	}
 	std::cout << std::endl;
+
+	//计算后缀表达式的值
+	std::list<std::string>* valueLeft = calcReversePolish(reversePolishLeft);
+
 
 	std::cout << "等号左面的后缀表达式的值:" << std::endl;
 	for (std::list<std::string>::iterator it = valueLeft->begin(); it != valueLeft->end(); ++it) {
@@ -346,12 +338,20 @@ std::list<std::string>* phaseEquation(std::string input) {
 	std::cout << std::endl;
 
 
+	std::list<std::string>* valueRight = calcReversePolish(reversePolishRight);
 	std::cout << "等号右面的后缀表达式的值:" << std::endl;
 	for (std::list<std::string>::iterator it = valueRight->begin(); it != valueRight->end(); ++it) {
 		std::cout << *it;
 		std::cout << " ";
 	}
 	std::cout << std::endl;
+
+	//移项
+	for (std::list<std::string>::iterator it = valueRight->begin(); it != valueRight->end(); ++it) {
+		valueLeft->push_back(*it);
+	}
+	valueLeft->push_back("-");
+	std::list<std::string>* afterAll = calcReversePolish(valueLeft);
 
 	std::cout << "最终结果的后缀表达式:" << std::endl;
 	for (std::list<std::string>::iterator it = afterAll->begin(); it != afterAll->end(); ++it) {
@@ -413,12 +413,17 @@ bool isConstant(std::list<std::string>* equation){
 }
 
 
-std::string& replaceDefine(std::string input) {
+std::string replaceDefine(std::string input) {
 	std::map<std::string, std::string>::iterator  it;
+
+	std::string tmp = input;
 	for (it = defineMap.begin(); it != defineMap.end(); ++it)
 	{
-		replaceWith(input, it->first,it->second);
+		tmp = replaceWith(tmp, it->first,it->second);
 	}
+
+
+	return tmp;
 
 
 }
